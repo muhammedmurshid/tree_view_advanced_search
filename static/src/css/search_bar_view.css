@@ -1,67 +1,88 @@
+/* Container for the search input (text input + search icon) */
 .search-input {
     border: 1px solid #ccc;
     padding: 3px;
-    display: inline-block;
+    display: flex; /* Use flex to align input and icon */
+    align-items: center; /* Vertically center the input and icon */
     border-radius: 5px;
     background-color: #E7E8ED;
-    max-height: 40px;
-    width: 100px; /* Reduced width */
-    overflow: auto;
+    width: 100%; /* Make the container take the full width of the th */
+    max-width: 150px; /* Optional: Set a max-width to prevent it from being too wide */
+    height: 30px; /* Consistent height with other elements */
+    box-sizing: border-box; /* Ensure padding doesn't affect the height */
 }
 
+/* Text input inside the search container */
 .input_data {
     border: none;
     outline: none;
-    padding: 3px;
-    font-size: 12px; /* Reduced font size */
+    padding: 3px 5px;
+    font-size: 12px;
     background-color: #E7E8ED;
-    width: 100px; /* Adjusted input width */
+    flex: 1; /* Allow the input to take the remaining space */
+    height: 100%; /* Match the height of the container */
+    box-sizing: border-box;
 }
 
-.dp-class {
-    height: 40px; /* Reduced height */
-    margin-bottom: 3px;
-    border-radius: 5px;
-}
-
+/* Search icon */
 .fa-search {
-    margin-top: 8px;
-    margin-left: -20px;
-    transform: translateY(-50%);
+    margin-left: 5px; /* Space between input and icon */
     color: #030202;
-    font-size: 14px; /* Reduced icon size */
+    font-size: 14px;
+    cursor: pointer;
 }
 
+/* Dropdown styling */
+.dp-class {
+    height: 30px; /* Match the height of other elements */
+    border-radius: 5px;
+    display: flex;
+    align-items: center; /* Vertically center the dropdown content */
+}
+
+/* Date picker styling */
 .date-input {
     border: 1px solid #ccc;
-    font-size: 12px; /* Reduced font size */
-    height: 40px; /* Reduced height */
+    font-size: 12px;
+    height: 30px; /* Match the height of other elements */
     background-color: #E7E8ED;
-    padding-left: 8px;
-    padding-top: 6px;
-    margin-left: 2px;
+    padding: 0 8px;
     border-radius: 5px;
-    margin-top: -10px;
+    display: flex;
+    align-items: center; /* Vertically center the content */
+    width: 100%; /* Take the full width of the th */
+    max-width: 150px; /* Optional: Set a max-width */
+    box-sizing: border-box;
 }
 
-.arrow {
-    padding-bottom: 10px;
-    padding-left: 2px;
+/* Ensure the table headers and cells are aligned */
+.o_list_renderer .o_list_table th,
+.o_list_renderer .o_list_table td {
+    white-space: nowrap;
+    vertical-align: middle; /* Vertically center the content in th/td */
+    padding: 5px; /* Consistent padding */
 }
+
+/* Ensure the table takes the full width */
 .o_list_renderer .o_list_table {
     width: 100% !important;
     table-layout: auto !important;
 }
 
-.o_list_renderer .o_list_table th,
-.o_list_renderer .o_list_table td {
-    white-space: nowrap; /* Prevent text wrapping to ensure columns stretch */
+/* Allow horizontal scrolling if needed */
+.o_list_renderer {
+    overflow-x: auto;
 }
 
-.o_list_renderer {
-    overflow-x: auto; /* Allow horizontal scrolling if content overflows */
-}
+/* Full-width table class */
 .full-width-table {
     width: 100% !important;
     table-layout: auto !important;
+}
+
+/* Ensure the search row th elements have consistent height and alignment */
+.o_list_renderer .o_list_table tr:nth-child(2) th {
+    height: 40px; /* Set a consistent height for the search row */
+    vertical-align: middle; /* Center the content vertically */
+    padding: 5px; /* Consistent padding */
 }
