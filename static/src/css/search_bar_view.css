@@ -2,14 +2,16 @@
 .search-input {
     border: 1px solid #ccc;
     padding: 3px;
-    display: flex; /* Use flex to align input and icon */
+    display: flex;
     align-items: center; /* Vertically center the input and icon */
     border-radius: 5px;
     background-color: #E7E8ED;
-    width: 100%; /* Make the container take the full width of the th */
-    max-width: 150px; /* Optional: Set a max-width to prevent it from being too wide */
-    height: 30px; /* Consistent height with other elements */
-    box-sizing: border-box; /* Ensure padding doesn't affect the height */
+    width: 100%;
+    max-width: 150px;
+    height: 30px;
+    box-sizing: border-box;
+    flex-direction: row-reverse; /* Reverse the order: icon on left, input on right */
+    justify-content: flex-end; /* Ensure the input stays on the right */
 }
 
 /* Text input inside the search container */
